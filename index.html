@@ -2,75 +2,74 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>فرم نظرسنجی</title>
+    <title>صفحه تست محلی</title>
     <style>
         body {
-            background-color: #f4f7f6;
+            background-color: #121212;
+            color: #ffffff;
             font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .test-banner {
+            background-color: #d9534f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            height: calc(100vh - 40px);
         }
-        .survey-card {
-            background-color: #ffffff;
+        .card {
+            background-color: #1e1e1e;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            width: 350px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-        h3 { color: #333; margin-top: 0; text-align: center; }
-        label { display: block; margin-top: 10px; color: #555; font-size: 14px; }
-        input, textarea {
+        h3 { color: #f6851b; margin-top: 0; }
+        input {
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
             border-radius: 4px;
             box-sizing: border-box;
         }
-        textarea { height: 100px; resize: vertical; }
         button {
             width: 100%;
             padding: 10px;
-            margin-top: 15px;
-            background-color: #007bff;
+            background-color: #f6851b;
             border: none;
             color: white;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
         }
-        button:hover { background-color: #0056b3; }
+        button:hover { background-color: #e2761b; }
     </style>
 </head>
 <body>
 
-    <div class="survey-card">
-        <h3>فرم نظرسنجی</h3>
-        <form onsubmit="handleSubmit(event)">
-            <label for="name">نام:</label>
-            <input type="text" id="name" required>
+    <div class="test-banner">⚠️ این صفحه تست است و صرفاً برای بررسی محلی کاربرد دارد</div>
 
-            <label for="comment">نظر شما:</label>
-            <textarea id="comment" required></textarea>
-
-            <button type="submit">ارسال نظر</button>
-        </form>
+    <div class="container">
+        <div class="card">
+            <h3>شبیه‌ساز فرم</h3>
+            <form onsubmit="alert('تست موفق: داده‌ها در محیط محلی متوقف شدند.'); return false;">
+                <input type="text" placeholder="متن یا داده تستی..." required>
+                <button type="submit">تست دکمه</button>
+            </form>
+        </div>
     </div>
-
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const comment = document.getElementById('comment').value;
-            
-            // نمایش در محیط محلی مرورگر
-            alert(`متشکرم ${name} عزیز!\nنظر شما ثبت شد.`);
-            event.target.reset();
-        }
-    </script>
 
 </body>
 </html>
